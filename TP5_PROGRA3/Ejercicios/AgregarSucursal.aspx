@@ -29,8 +29,12 @@
                 </tr>
             </table>
         </div>
-    </form>
     <div>
         [En este div, colocaremos el resto del ejercicio.]</div>
-</body>
+        <asp:DropDownList ID="ddlTest1" runat="server">
+        </asp:DropDownList>
+        <asp:DropDownList ID="ddlTest2" runat="server">
+        </asp:DropDownList>
+    </form>
+    </body>
 </html>

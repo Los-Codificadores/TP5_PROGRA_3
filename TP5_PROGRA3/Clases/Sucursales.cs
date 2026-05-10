@@ -19,7 +19,7 @@ namespace TP5_PROGRA3.Clases
 
         public DataTable ObtenerProvincias()
         {
-            string consultaSQL = "SELECT * FROM Provincia";
+            string consultaSQL = "SELECT * Fgi ROM Provincia";
             string nombreTabla = "Provincias";
             return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
         }

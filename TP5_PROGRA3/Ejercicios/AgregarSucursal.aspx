@@ -10,6 +10,23 @@
         .auto-style1 {
             width: 68%;
         }
+        .auto-style3 {
+            width: 213px;
+        }
+        .auto-style4 {
+            width: 128px;
+        }
+        .auto-style5 {
+            width: 128px;
+            height: 26px;
+        }
+        .auto-style6 {
+            width: 213px;
+            height: 26px;
+        }
+        .auto-style7 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -29,12 +46,47 @@
                 </tr>
             </table>
         </div>
-    <div>
-        [En este div, colocaremos el resto del ejercicio.]</div>
-        <asp:DropDownList ID="ddlTest1" runat="server">
-        </asp:DropDownList>
-        <asp:DropDownList ID="ddlTest2" runat="server">
-        </asp:DropDownList>
+        <div>
+            <br />
+            <asp:Label ID="lblAgregarSucursal" runat="server" Text="Agregar sucursal" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
+            <br />
+            <br />
+            <table style="width:100%;">
+                <tr>
+                    <td class="auto-style4">Nombre sucursal:</td>
+                    <td class="auto-style3">
+                        <asp:TextBox ID="txtNombreSucursal" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
+                    </td>
+                    <td>
+                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Debe escribir un nombre." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Descripción</td>
+                    <td class="auto-style6">
+                        <asp:TextBox ID="txtDescripcion" runat="server" ValidationGroup="AgregarSucursal" Width="181px"></asp:TextBox>
+                    </td>
+                    <td class="auto-style7"> 
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe escribir una descripción." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Dirección</td>
+                    <td class="auto-style6">
+                        <asp:TextBox ID="txtDireccion" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
+                    </td>
+                    <td class="auto-style7">
+                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe escribir una dirección." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="auto-style3">
+                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </form>
     </body>
 </html>

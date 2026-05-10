@@ -10,7 +10,7 @@ namespace TP5_PROGRA3.Ejercicios
 {
     public partial class AgregarSucursal : System.Web.UI.Page
     {
-        ClaseSucursales Test = new ClaseSucursales();
+        Sucursales Test = new Sucursales();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

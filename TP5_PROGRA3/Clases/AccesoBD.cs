@@ -7,7 +7,7 @@ using System.Data;
 
 namespace TP5_PROGRA3.Clases
 {
-    public class ClaseAccesoBD
+    public class AccesoBD
     {
         private const string rutaConexion = @"Data Source= (localdb)\MSSQLLocalDB;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";
         //private static string rutaConexion = @"Data Source=localhost\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True";

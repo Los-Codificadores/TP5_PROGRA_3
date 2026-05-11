@@ -27,6 +27,17 @@
         .auto-style7 {
             height: 26px;
         }
+        .auto-style8 {
+            width: 128px;
+            height: 29px;
+        }
+        .auto-style9 {
+            width: 213px;
+            height: 29px;
+        }
+        .auto-style10 {
+            height: 29px;
+        }
     </style>
 </head>
 <body>
@@ -71,11 +82,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style5">Dirección</td>
-                    <td class="auto-style6">
+                    <td class="auto-style8">Provincia</td>
+                    <td class="auto-style9">
+                        <asp:DropDownList ID="ddlProvincias" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                    <td class="auto-style10">
+                         &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Dirección</td>
+                    <td class="auto-style3">
                         <asp:TextBox ID="txtDireccion" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
                     </td>
-                    <td class="auto-style7">
+                    <td>
                          <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe escribir una dirección." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -87,6 +107,15 @@
                 </tr>
             </table>
         </div>
+            <table style="width:100%;">
+                <tr>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9">
+                        &nbsp;</td>
+                    <td class="auto-style10">
+                         &nbsp;</td>
+                </tr>
+            </table>
     </form>
     </body>
 </html>

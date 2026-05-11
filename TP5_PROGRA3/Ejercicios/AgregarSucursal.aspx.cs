@@ -20,17 +20,17 @@ namespace TP5_PROGRA3.Ejercicios
                 ddlProvincias.DataValueField = "Id_Provincia";
                 ddlProvincias.DataBind();
             }
-
         }
 
-        protected void btnGuardar_Click(object sender ,EventArgs e)
+        protected void btnGuardar_Click(Object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
-
+                string nombre = txtNombreSucursal.Text;
+                string descripcion = txtDescripcion.Text;
+                string direccion = txtDireccion.Text;
+                string idProvincia = ddlProvincias.SelectedValue;
             }
-            
         }
-
     }
 }

@@ -18,9 +18,9 @@ namespace TP5_PROGRA3.Clases
             conexion.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(consultaSQL, conexion);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "nombreTabla");
+            adapter.Fill(ds, nombreTabla);
             conexion.Close();
-            return ds.Tables["nombreTabla"];
+            return ds.Tables[nombreTabla];
         }
 
         public int ConsultaBD(string consultaSQL)

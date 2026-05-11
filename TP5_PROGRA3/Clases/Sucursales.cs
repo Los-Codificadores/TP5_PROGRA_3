@@ -32,8 +32,8 @@ namespace TP5_PROGRA3.Clases
         }
 
         public int AgregarSucursal(string nombre, string descripcion, string idProvincia, string direccion)
-        {
-            string consultaSQL = ""; 
+        {   
+            string consultaSQL = $"INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) VALUES('{nombre}', '{descripcion}', {idProvincia}, '{direccion}')";
             return conexion.ConsultaBD(consultaSQL);
         }
 

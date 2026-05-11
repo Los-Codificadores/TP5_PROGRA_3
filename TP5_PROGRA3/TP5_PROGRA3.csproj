@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ejercicios\AgregarSucursal.aspx" />
+    <Content Include="Ejercicios\ListarSucursal.aspx" />
+    <Content Include="Ejercicios\EliminarSucursal.aspx" />
     <Content Include="Sucursales.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +80,20 @@
     </Compile>
     <Compile Include="Ejercicios\AgregarSucursal.aspx.designer.cs">
       <DependentUpon>AgregarSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios\ListarSucursal.aspx.cs">
+      <DependentUpon>ListarSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicios\ListarSucursal.aspx.designer.cs">
+      <DependentUpon>ListarSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ejercicios\EliminarSucursal.aspx.cs">
+      <DependentUpon>EliminarSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ejercicios\EliminarSucursal.aspx.designer.cs">
+      <DependentUpon>EliminarSucursal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

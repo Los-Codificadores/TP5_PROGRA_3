@@ -35,13 +35,13 @@
             <table class="auto-style1" style="text-align: center; vertical-align: middle">
                 <tr>
                     <td>
-                        <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server">Agregar Sucursal</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx">Agregar Sucursal</asp:LinkButton>
                     </td>
                     <td>
-                        <asp:LinkButton ID="LinkButton2" runat="server">Listado de Sucursales</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Ejercicios/ListarSucursal.aspx">Listado de Sucursales</asp:LinkButton>
                     </td>
                     <td>
-                        <asp:LinkButton ID="LinkButton3" runat="server">Eliminar Sucursal</asp:LinkButton>
+                        <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx">Eliminar Sucursal</asp:LinkButton>
                     </td>
                 </tr>
             </table>

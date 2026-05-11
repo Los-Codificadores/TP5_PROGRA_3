@@ -30,6 +30,9 @@ namespace TP5_PROGRA3.Ejercicios
                 string descripcion = txtDescripcion.Text;
                 string direccion = txtDireccion.Text;
                 string idProvincia = ddlProvincias.SelectedValue;
+
+                Agregar.AgregarSucursal(nombre, descripcion, idProvincia, direccion);
+                labelControlGuardadoExitoso.Visible = true;
             }
         }
     }

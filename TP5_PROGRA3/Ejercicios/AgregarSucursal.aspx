@@ -104,6 +104,9 @@
                     <td class="auto-style3">
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" />
                     </td>
+                    <td>
+                        <asp:Label ID="labelControlGuardadoExitoso" runat="server" ForeColor="#009933" Text="Los datos han sido guardados con exito!" Visible="False"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

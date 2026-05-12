@@ -69,7 +69,7 @@
                         <asp:TextBox ID="txtNombreSucursal" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
                     </td>
                     <td>
-                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Debe escribir un nombre." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Debe escribir un nombre." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +78,7 @@
                         <asp:TextBox ID="txtDescripcion" runat="server" ValidationGroup="AgregarSucursal" Width="181px"></asp:TextBox>
                     </td>
                     <td class="auto-style7"> 
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe escribir una descripción." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe escribir una descripción." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -96,7 +96,7 @@
                         <asp:TextBox ID="txtDireccion" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
                     </td>
                     <td>
-                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe escribir una dirección." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic"></asp:RequiredFieldValidator>
+                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe escribir una dirección." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

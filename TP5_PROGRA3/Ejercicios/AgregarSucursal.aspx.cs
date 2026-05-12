@@ -22,8 +22,11 @@ namespace TP5_PROGRA3.Ejercicios
             }
         }
 
-        protected void btnGuardar_Click(Object sender, EventArgs e)
+        protected void btnGuardar_Click(Object sender ,EventArgs e)
         {
+            // Siempre comienza en falso, verificamos si debe cambiar
+            labelControlGuardadoExitoso.Visible = false;
+
             if (Page.IsValid)
             {
                 string nombre = txtNombreSucursal.Text;

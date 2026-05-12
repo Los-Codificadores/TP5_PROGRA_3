@@ -19,6 +19,7 @@ namespace TP5_PROGRA3.Ejercicios
                 ddlProvincias.DataTextField = "DescripcionProvincia";
                 ddlProvincias.DataValueField = "Id_Provincia";
                 ddlProvincias.DataBind();
+                ajustesDefault();
             }
         }
 
@@ -36,7 +37,21 @@ namespace TP5_PROGRA3.Ejercicios
 
                 Agregar.AgregarSucursal(nombre, descripcion, idProvincia, direccion);
                 labelControlGuardadoExitoso.Visible = true;
+                ajustesDefault();
             }
+        }
+
+
+        protected void LinkButtonAgregarSucursal_Click(object sender, EventArgs e)
+        {
+            ajustesDefault();
+        }
+        protected void ajustesDefault()
+        {
+            txtNombreSucursal.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+            ddlProvincias.SelectedIndex = 0;
         }
     }
 }

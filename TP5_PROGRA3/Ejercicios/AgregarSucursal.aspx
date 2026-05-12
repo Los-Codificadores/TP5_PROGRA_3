@@ -1,124 +1,160 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarSucursal.aspx.cs" Inherits="TP5_PROGRA3.Ejercicios.AgregarSucursal" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>TP5</title>
     <style type="text/css">
-        .auto-style1 {
-            width: 68%;
+        body {
+            background-color: #121212; /* Fondo oscuro inspirado en la imagen */
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
-        .auto-style3 {
-            width: 213px;
+        #form1 {
+            width: 70%;
+            min-width: 600px;
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
-        .auto-style4 {
-            width: 128px;
+        .menu-container {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        .auto-style5 {
-            width: 128px;
-            height: 26px;
+        .menu-link {
+            color: #d4af37; /* Color dorado como en la captura */
+            text-decoration: none;
+            margin: 0 25px;
+            font-size: 16px;
+            transition: color 0.3s;
         }
-        .auto-style6 {
-            width: 213px;
-            height: 26px;
+        .menu-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
         }
-        .auto-style7 {
-            height: 26px;
+        .grupo-titulo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
-        .auto-style8 {
-            width: 128px;
-            height: 29px;
+        .titulo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            display: block;
+            color: #ffffff;
         }
-        .auto-style9 {
-            width: 213px;
-            height: 29px;
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        .auto-style10 {
-            height: 29px;
+        .form-table td {
+            padding: 10px 10px;
+            vertical-align: middle;
+        }
+        .label-cell {
+            width: 160px;
+            font-size: 15px;
+        }
+        .input-control {
+            width: 250px;
+            padding: 6px 10px;
+            background-color: #121212;
+            border: 1px solid #555;
+            color: #fff;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+        .input-control:focus {
+            border-color: #888;
+            outline: none;
+        }
+        .btn-guardar {
+            background-color: #2b2b2b;
+            color: #fff;
+            border: 1px solid #666;
+            padding: 8px 20px;
+            font-size: 14px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-guardar:hover {
+            background-color: #444;
+        }
+        .error-message {
+            color: #ff4444 !important;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+        .success-message {
+            color: #00C851 !important;
+            font-weight: bold;
+            font-size: 15px;
+            margin-left: 15px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1" style="text-align: center; vertical-align: middle">
-                <tr>
-                    <td>
-                        <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" OnClick="LinkButtonAgregarSucursal_Click">Agregar Sucursal</asp:LinkButton>
-                    </td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Ejercicios/ListarSucursal.aspx">Listado de Sucursales</asp:LinkButton>
-                    </td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx">Eliminar Sucursal</asp:LinkButton>
-                    </td>
-                </tr>
-            </table>
+        
+        <!-- Menú de navegación -->
+        <div class="menu-container">
+            <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" CssClass="menu-link" OnClick="LinkButtonAgregarSucursal_Click">Agregar Sucursal</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Ejercicios/ListarSucursal.aspx" CssClass="menu-link">Listado de Sucursales</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx" CssClass="menu-link">Eliminar Sucursal</asp:LinkButton>
         </div>
-        <div>
-            <br />
-            <asp:Label ID="lblAgregarSucursal" runat="server" Text="Agregar sucursal" Font-Bold="True" Font-Size="XX-Large"></asp:Label>
-            <br />
-            <br />
-            <table style="width:100%;">
-                <tr>
-                    <td class="auto-style4">Nombre sucursal:</td>
-                    <td class="auto-style3">
-                        <asp:TextBox ID="txtNombreSucursal" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
-                    </td>
-                    <td>
-                         <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Debe escribir un nombre." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style5">Descripción</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="txtDescripcion" runat="server" ValidationGroup="AgregarSucursal" Width="181px"></asp:TextBox>
-                    </td>
-                    <td class="auto-style7"> 
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe escribir una descripción." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style8">Provincia</td>
-                    <td class="auto-style9">
-                        <asp:DropDownList ID="ddlProvincias" runat="server">
-                        </asp:DropDownList>
-                    </td>
-                    <td class="auto-style10">
-                         &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">Dirección</td>
-                    <td class="auto-style3">
-                        <asp:TextBox ID="txtDireccion" runat="server" Width="181px" ValidationGroup="AgregarSucursal"></asp:TextBox>
-                    </td>
-                    <td>
-                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Debe escribir una dirección." ForeColor="Red" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style3">
-                        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" />
-                    </td>
-                    <td>
-                        <asp:Label ID="labelControlGuardadoExitoso" runat="server" ForeColor="#009933" Text="Los datos han sido guardados con exito!" Visible="False"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-        </div>
-            <table style="width:100%;">
-                <tr>
-                    <td class="auto-style8"></td>
-                    <td class="auto-style9">
-                        &nbsp;</td>
-                    <td class="auto-style10">
-                         &nbsp;</td>
-                </tr>
-            </table>
+
+        <!-- Títulos -->
+        <asp:Label ID="lblAgregarSucursal" runat="server" Text="Agregar Sucursal" CssClass="titulo"></asp:Label>
+        
+        <!-- Formulario -->
+        <table class="form-table">
+            <tr>
+                <td class="label-cell">Nombre Sucursal:</td>
+                <td>
+                    <asp:TextBox ID="txtNombreSucursal" runat="server" CssClass="input-control" ValidationGroup="AgregarSucursal"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvNombreSucursal" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="* Requerido" CssClass="error-message" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Descripción:</td>
+                <td>
+                    <asp:TextBox ID="txtDescripcion" runat="server" CssClass="input-control" ValidationGroup="AgregarSucursal"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="* Requerido" CssClass="error-message" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Provincia:</td>
+                <td>
+                    <asp:DropDownList ID="ddlProvincias" runat="server" CssClass="input-control">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell">Dirección:</td>
+                <td>
+                    <asp:TextBox ID="txtDireccion" runat="server" CssClass="input-control" ValidationGroup="AgregarSucursal"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="* Requerido" CssClass="error-message" ValidationGroup="AgregarSucursal" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-cell"></td>
+                <td style="padding-top: 20px;">
+                    <asp:Button ID="btnGuardar" runat="server" Text="Aceptar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" CssClass="btn-guardar" />
+                    <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
+                </td>
+            </tr>
+        </table>
+
     </form>
-    </body>
+</body>
 </html>

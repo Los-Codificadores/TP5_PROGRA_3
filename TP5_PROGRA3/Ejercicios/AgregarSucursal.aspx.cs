@@ -23,13 +23,22 @@ namespace TP5_PROGRA3.Ejercicios
             }
         }
 
+
         protected void btnGuardar_Click(Object sender ,EventArgs e)
         {
             // Siempre comienza en falso, verificamos si debe cambiar
             labelControlGuardadoExitoso.Visible = false;
+            LabelControlGuardadoFallido.Visible = false;
 
             if (Page.IsValid)
             {
+
+                if (Agregar.ExisteNombreSucursal(txtNombreSucursal.Text))
+                {
+                    LabelControlGuardadoFallido.Visible = true;
+                    return; // Esto evita que siga con el proceso de guardado
+                }
+
                 string nombre = txtNombreSucursal.Text;
                 string descripcion = txtDescripcion.Text;
                 string direccion = txtDireccion.Text;

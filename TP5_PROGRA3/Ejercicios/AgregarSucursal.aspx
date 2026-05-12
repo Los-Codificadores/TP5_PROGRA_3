@@ -157,6 +157,8 @@
                         <ContentTemplate>
                             <asp:Timer ID="TimerOcultarMensaje" runat="server" Interval="3000" Enabled="False" OnTick="TimerOcultarMensaje_Tick"></asp:Timer>
                             
+                            <asp:Label ID="LabelControlGuardadoFallido" runat="server" ForeColor="Red" Text="La sucursal ya se encuentra en la base de datos." Visible="False"></asp:Label>
+                            
                             <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
                         </ContentTemplate>
                     </asp:UpdatePanel>

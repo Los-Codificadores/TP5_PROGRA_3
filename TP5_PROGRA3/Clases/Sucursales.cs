@@ -49,5 +49,14 @@ namespace TP5_PROGRA3.Clases
             string nombreTabla = "Sucursales";
             return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
         }
+
+        public bool ExisteNombreSucursal(string nombre)
+        {
+            string consultaSQL = $"SELECT * FROM Sucursal WHERE NombreSucursal = '{nombre}'";
+            DataTable tabla = conexion.ObtenerTablaBD(consultaSQL, "SucursalExistente");
+
+            // Si la tabla tiene alguna fila, es porque ya existe el nombre
+            return tabla.Rows.Count > 0;
+        }
     }
 }

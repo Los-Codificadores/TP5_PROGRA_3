@@ -137,7 +137,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         
         <div class="menu-container">
             <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" CssClass="menu-link" OnClick="LinkButtonAgregarSucursal_Click">Agregar Sucursal</asp:LinkButton>
@@ -181,15 +180,9 @@
                 <td style="padding-top: 20px;">
                     <asp:Button ID="btnGuardar" runat="server" Text="Aceptar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" CssClass="btn-guardar" />
                     
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <asp:Timer ID="TimerOcultarMensaje" runat="server" Interval="3000" Enabled="False" OnTick="TimerOcultarMensaje_Tick"></asp:Timer>
-                            
-                            <asp:Label ID="LabelControlGuardadoFallido" runat="server" ForeColor="#ff4d4d" Text="La sucursal ya se encuentra en la base de datos." Visible="False" style="margin-left: 15px; font-weight: bold;"></asp:Label>
-                            
-                            <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                    <asp:Label ID="LabelControlGuardadoFallido" runat="server" ForeColor="#ff4d4d" Text="La sucursal ya se encuentra en la base de datos." Visible="False" style="margin-left: 15px; font-weight: bold;"></asp:Label>
+                    
+                    <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
                 </td>
             </tr>
         </table>

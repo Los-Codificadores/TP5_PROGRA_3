@@ -37,10 +37,17 @@ namespace TP5_PROGRA3.Ejercicios
 
                 Agregar.AgregarSucursal(nombre, descripcion, idProvincia, direccion);
                 labelControlGuardadoExitoso.Visible = true;
+                TimerOcultarMensaje.Enabled = true;
                 ajustesDefault();
             }
         }
 
+        protected void TimerOcultarMensaje_Tick(object sender, EventArgs e)
+        {
+            labelControlGuardadoExitoso.Visible = false;
+
+            TimerOcultarMensaje.Enabled = false;
+        }
 
         protected void LinkButtonAgregarSucursal_Click(object sender, EventArgs e)
         {

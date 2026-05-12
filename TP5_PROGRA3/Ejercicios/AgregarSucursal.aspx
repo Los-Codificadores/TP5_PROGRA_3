@@ -105,6 +105,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         
         <!-- Menú de navegación -->
         <div class="menu-container">
@@ -150,7 +152,14 @@
                 <td class="label-cell"></td>
                 <td style="padding-top: 20px;">
                     <asp:Button ID="btnGuardar" runat="server" Text="Aceptar" OnClick="btnGuardar_Click" ValidationGroup="AgregarSucursal" CssClass="btn-guardar" />
-                    <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
+                    
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Timer ID="TimerOcultarMensaje" runat="server" Interval="3000" Enabled="False" OnTick="TimerOcultarMensaje_Tick"></asp:Timer>
+                            
+                            <asp:Label ID="labelControlGuardadoExitoso" runat="server" Text="La sucursal se ha agregado con éxito" Visible="False" CssClass="success-message"></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </td>
             </tr>
         </table>

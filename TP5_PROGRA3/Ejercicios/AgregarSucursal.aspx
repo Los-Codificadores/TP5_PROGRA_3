@@ -108,7 +108,7 @@
         
         <!-- Menú de navegación -->
         <div class="menu-container">
-            <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" CssClass="menu-link">Agregar Sucursal</asp:LinkButton>
+            <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" CssClass="menu-link" OnClick="LinkButtonAgregarSucursal_Click">Agregar Sucursal</asp:LinkButton>
             <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Ejercicios/ListarSucursal.aspx" CssClass="menu-link">Listado de Sucursales</asp:LinkButton>
             <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx" CssClass="menu-link">Eliminar Sucursal</asp:LinkButton>
         </div>

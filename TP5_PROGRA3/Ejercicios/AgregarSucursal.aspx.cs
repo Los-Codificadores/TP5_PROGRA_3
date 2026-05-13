@@ -33,6 +33,13 @@ namespace TP5_PROGRA3.Ejercicios
             if (Page.IsValid)
             {
 
+                if (txtNombreSucursal.Text.Length > 100 || txtDescripcion.Text.Length > 100 || txtDireccion.Text.Length > 100)
+                {
+                    LabelControlGuardadoFallido.Text = "Error: Los campos no pueden superar los 100 caracteres.";
+                    LabelControlGuardadoFallido.Visible = true;
+                    return;
+                }
+
                 if (Agregar.ExisteNombreSucursal(txtNombreSucursal.Text))
                 {
                     LabelControlGuardadoFallido.Visible = true;
@@ -61,6 +68,8 @@ namespace TP5_PROGRA3.Ejercicios
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
             ddlProvincias.SelectedIndex = 0;
+
+            txtNombreSucursal.Focus();
         }
     }
 }

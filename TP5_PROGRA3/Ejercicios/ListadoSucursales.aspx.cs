@@ -27,13 +27,21 @@ namespace TP5_PROGRA3.Ejercicios
 
         protected void ButtonFiltrarPorID_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrEmpty(TextBoxBuscarId.Text))
+            {
+                CargarSucursales();
+                return;
+            }
+
             GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorId(TextBoxBuscarId.Text);
             GridViewSucursales.DataBind();
         }
 
         protected void ButtonMostrarTodos_Click(object sender, EventArgs e)
         {
-
+            CargarSucursales();
+            return;
         }
     }
 }

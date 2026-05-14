@@ -17,6 +17,13 @@ namespace TP5_PROGRA3.Clases
             return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
         }
 
+        public DataTable FiltrarSucursalesPorId(string id)
+        {
+            string consultaSQL = $"SELECT Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_Provincia=Id_ProvinciaSucursal WHERE Id_Sucursal = {id}";
+            string nombreTabla = "SucursalesFiltradas";
+            return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
+        }
+
         public DataTable ObtenerProvincias()
         {
             string consultaSQL = "SELECT * FROM Provincia";

@@ -158,9 +158,9 @@
                 <td class="auto-style2">Búsqueda por ID:</td>
                 <td class="auto-style1">
                     <!-- Acá va el TextBox y el Validador -->
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBoxBuscarId" runat="server"></asp:TextBox>
                 </td>
-                <td>
+                <td style="width: 100%;">
                     <!-- Acá va el Botón Filtrar -->
                     <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" />
                 </td>

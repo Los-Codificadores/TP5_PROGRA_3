@@ -162,7 +162,12 @@
                 </td>
                 <td>
                     <!-- Acá va el Botón Filtrar -->
-                    <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" />
+                    <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" ValidationGroup="Filtro" />
+                </td>
+                <td>
+
+                    <asp:CompareValidator ID="CompareValidatorID" runat="server" ControlToValidate="TextBoxBuscarId" ErrorMessage="ID no valido!" ForeColor="Red" Operator="DataTypeCheck" Type="Integer" ValidationGroup="Filtro"></asp:CompareValidator>
+
                 </td>
             </tr>
         </table>

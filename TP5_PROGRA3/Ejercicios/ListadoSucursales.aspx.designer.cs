@@ -78,6 +78,15 @@ namespace TP5_PROGRA3.Ejercicios
         protected global::System.Web.UI.WebControls.Button ButtonFiltrarPorID;
 
         /// <summary>
+        /// Control CompareValidatorID.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorID;
+
+        /// <summary>
         /// Control ButtonMostrarTodos.
         /// </summary>
         /// <remarks>

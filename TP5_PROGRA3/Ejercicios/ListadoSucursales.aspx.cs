@@ -24,5 +24,15 @@ namespace TP5_PROGRA3.Ejercicios
             GridViewSucursales.DataSource = Listado.ObtenerSucursales();
             GridViewSucursales.DataBind();
         }
+
+        protected void ButtonFiltrarPorID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonMostrarTodos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

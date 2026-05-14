@@ -1,10 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListadoSucursales.aspx.cs" Inherits="TP5_PROGRA3.Ejercicios.WebForm1" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Listado de Sucursales</title>
     <style type="text/css">
     body {
@@ -133,18 +132,55 @@
         font-size: 15px;
         margin-left: 15px;
     }
-</style>
-</head>
-<body>
+        .auto-style1 {
+            width: 103px;
+        }
+        .auto-style2 {
+            width: 122px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    </style></head><body>
     <form id="form1" runat="server">
         <div class="menu-container">
             <asp:LinkButton ID="LinkButtonAgregarSucursal" runat="server" PostBackUrl="~/Ejercicios/AgregarSucursal.aspx" CssClass="menu-link">Agregar Sucursal</asp:LinkButton>
             <asp:LinkButton ID="LinkButtonListadoSucursales" runat="server" PostBackUrl="~/Ejercicios/ListadoSucursales.aspx" CssClass="menu-link">Listado de Sucursales</asp:LinkButton>
             <asp:LinkButton ID="LinkButtonEliminarSucursal" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx" CssClass="menu-link">Eliminar Sucursal</asp:LinkButton>
         </div>
+        
         <asp:Label ID="lbListadoSucursales" runat="server" Font-Bold="True" Text="Listado de sucursales"></asp:Label>
         <br />
         <br />
+
+        <!-- TABLA PARA FILTRAR (NUEVA) -->
+        <table class="form-table">
+            <tr>
+                <td class="auto-style2">Búsqueda por ID:</td>
+                <td class="auto-style1">
+                    <!-- Acá va el TextBox y el Validador -->
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <!-- Acá va el Botón Filtrar -->
+                    <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" />
+                </td>
+            </tr>
+        </table>
+
+        <br />
+
+        <!-- TABLA PARA MOSTRAR TODOS (NUEVA) -->
+        <table class="form-table">
+            <tr>
+                <td>
+                    <!-- Acá va el Botón Mostrar Todos -->
+                    <asp:Button ID="ButtonMostrarTodos" runat="server" OnClick="ButtonMostrarTodos_Click" Text="Mostrar Todos" />
+                </td>
+            </tr>
+        </table>
+
+        <br />
+
         <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" />
@@ -155,5 +191,4 @@
             </Columns>
         </asp:GridView>
     </form>
-    </body>
-</html>
+    </body></html>

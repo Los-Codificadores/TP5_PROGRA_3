@@ -7,7 +7,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Listado de Sucursales</title>
     <style type="text/css">
-        .menu-link {
+    body {
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    #form1 {
+        width: 70%;
+        min-width: 600px;
+        margin-top: 40px;
+        padding: 40px;
+        
+        background: rgba(30, 30, 30, 0.45);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+    .menu-container {
+        text-align: center;
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .menu-link {
         color: #d4af37;
         text-decoration: none;
         margin: 0 25px;
@@ -16,14 +54,86 @@
         transition: all 0.3s ease;
         padding: 8px 16px;
         border-radius: 8px;
-        }
-        .menu-link:hover {
-            color: #ffffff;
-            background: rgba(212, 175, 55, 0.2);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
-            text-decoration: none;
-        }
-    </style>
+    }
+    .menu-link:hover {
+        color: #ffffff;
+        background: rgba(212, 175, 55, 0.2);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+        text-decoration: none;
+    }
+    .grupo-titulo {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+    .titulo {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        display: block;
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .form-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .form-table td {
+        padding: 10px 10px;
+        vertical-align: middle;
+    }
+    .label-cell {
+        width: 160px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .input-control {
+        width: 250px;
+        padding: 8px 12px;
+        background: rgba(18, 18, 18, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border-radius: 6px;
+        font-family: inherit;
+        transition: all 0.3s ease;
+    }
+    .input-control:focus {
+        background: rgba(30, 30, 30, 0.8);
+        border-color: #d4af37;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        outline: none;
+    }
+    .btn-guardar {
+        background: rgba(212, 175, 55, 0.1);
+        color: #d4af37;
+        border: 1px solid #d4af37;
+        padding: 10px 25px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .btn-guardar:hover {
+        background: #d4af37;
+        color: #121212;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    }
+    .error-message {
+        color: #ff4d4d !important;
+        font-size: 13px;
+        margin-left: 10px;
+    }
+    .success-message {
+        color: #00C851 !important;
+        font-weight: bold;
+        font-size: 15px;
+        margin-left: 15px;
+    }
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,6 +142,18 @@
             <asp:LinkButton ID="LinkButtonListadoSucursales" runat="server" PostBackUrl="~/Ejercicios/ListadoSucursales.aspx" CssClass="menu-link">Listado de Sucursales</asp:LinkButton>
             <asp:LinkButton ID="LinkButtonEliminarSucursal" runat="server" PostBackUrl="~/Ejercicios/EliminarSucursal.aspx" CssClass="menu-link">Eliminar Sucursal</asp:LinkButton>
         </div>
+        <asp:Label ID="lbListadoSucursales" runat="server" Font-Bold="True" Text="Listado de sucursales"></asp:Label>
+        <br />
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" />
+                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
+                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
+                <asp:BoundField DataField="Provincia" HeaderText="Provincia" />
+                <asp:BoundField DataField="Direccion" HeaderText="Dirección" />
+            </Columns>
+        </asp:GridView>
     </form>
-</body>
+    </body>
 </html>

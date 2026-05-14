@@ -145,7 +145,7 @@
         <asp:Label ID="lbListadoSucursales" runat="server" Font-Bold="True" Text="Listado de sucursales"></asp:Label>
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />

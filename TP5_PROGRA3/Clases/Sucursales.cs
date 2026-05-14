@@ -12,7 +12,7 @@ namespace TP5_PROGRA3.Clases
         AccesoBD conexion = new AccesoBD();
         public DataTable ObtenerSucursales()
         {
-            string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS NOMBRE, DescripcionProvincia AS PROVINCIA, DireccionSucursal AS DIRECCIÓN FROM Sucursal INNER JOIN Provincia ON Id_Provincia=Id_ProvinciaSucursal";
+            string consultaSQL = "SELECT Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_Provincia=Id_ProvinciaSucursal";
             string nombreTabla = "Sucursales";
             return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
         }

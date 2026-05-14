@@ -160,7 +160,7 @@
                     <!-- Acá va el TextBox y el Validador -->
                     <asp:TextBox ID="TextBoxBuscarId" runat="server"></asp:TextBox>
                 </td>
-                <td style="width: 100%;">
+                <td>
                     <!-- Acá va el Botón Filtrar -->
                     <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" />
                 </td>

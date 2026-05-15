@@ -36,11 +36,14 @@ namespace TP5_PROGRA3.Ejercicios
 
             GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorId(TextBoxBuscarId.Text);
             GridViewSucursales.DataBind();
+
+            TextBoxBuscarId.Text = string.Empty;
         }
 
         protected void ButtonMostrarTodos_Click(object sender, EventArgs e)
         {
             CargarSucursales();
+            TextBoxBuscarId.Text = string.Empty;
             return;
         }
     }

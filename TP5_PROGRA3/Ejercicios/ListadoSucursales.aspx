@@ -140,7 +140,6 @@
             font-size: 15px;
             font-weight: 500;
         }
-        /* ESTILOS PARA LA GRILLA (DARK MODE) */
         .grid-view {
             width: 100%;
             border-collapse: collapse;
@@ -177,16 +176,13 @@
         <br />
         <br />
 
-        <!-- TABLA PARA FILTRAR (NUEVA) -->
         <table class="form-table">
             <tr>
                 <td class="auto-style2">Búsqueda por ID:</td>
                 <td class="auto-style1">
-                    <!-- Acá va el TextBox y el Validador -->
                     <asp:TextBox ID="TextBoxBuscarId" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <!-- Acá va el Botón Filtrar -->
                     <asp:Button ID="ButtonFiltrarPorID" runat="server" OnClick="ButtonFiltrarPorID_Click" Text="Filtrar" ValidationGroup="Filtro" />
                 </td>
                 <td>
@@ -211,11 +207,9 @@
 
         <br />
 
-        <!-- TABLA PARA MOSTRAR TODOS (NUEVA) -->
         <table class="form-table">
             <tr>
                 <td>
-                    <!-- Acá va el Botón Mostrar Todos -->
                     <asp:Button ID="ButtonMostrarTodos" runat="server" OnClick="ButtonMostrarTodos_Click" Text="Mostrar Todos" />
                 </td>
             </tr>

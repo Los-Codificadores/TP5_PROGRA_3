@@ -16,6 +16,7 @@ namespace TP5_PROGRA3.Ejercicios
             if (!Page.IsPostBack)
             {
                 CargarSucursales();
+                CargarProvincias();
             }
         }
 
@@ -30,12 +31,28 @@ namespace TP5_PROGRA3.Ejercicios
 
             if (string.IsNullOrEmpty(TextBoxBuscarId.Text))
             {
-                CargarSucursales();
+                if (ddlProvincias.SelectedValue != "0")
+                {
+                    GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorProvincia(ddlProvincias.SelectedValue);
+                    GridViewSucursales.DataBind();
+                }
+                else
+                {
+                    CargarSucursales();
+                }
                 return;
             }
-
-            GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorId(TextBoxBuscarId.Text);
-            GridViewSucursales.DataBind();
+            if (ddlProvincias.SelectedValue != "0")
+            {
+                GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorProvinciaYID(ddlProvincias.SelectedValue, TextBoxBuscarId.Text);
+                GridViewSucursales.DataBind();
+            }
+            else
+            {
+                GridViewSucursales.DataSource = Listado.FiltrarSucursalesPorId(TextBoxBuscarId.Text);
+                GridViewSucursales.DataBind();
+            }
+                
 
             TextBoxBuscarId.Text = string.Empty;
         }
@@ -45,6 +62,16 @@ namespace TP5_PROGRA3.Ejercicios
             CargarSucursales();
             TextBoxBuscarId.Text = string.Empty;
             return;
+        }
+
+        protected void CargarProvincias()
+        {
+            ddlProvincias.DataSource = Listado.ObtenerProvincias();
+            ddlProvincias.DataTextField = "DescripcionProvincia";
+            ddlProvincias.DataValueField = "Id_Provincia";
+            ddlProvincias.DataBind();
+            //Inserto la opcion "Seleccione una provincia" al inicio del DropDownList
+            ddlProvincias.Items.Insert(0, new ListItem("Seleccione una provincia", "0"));
         }
     }
 }

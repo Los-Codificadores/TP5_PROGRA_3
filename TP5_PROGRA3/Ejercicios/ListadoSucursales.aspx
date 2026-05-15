@@ -170,6 +170,18 @@
 
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style2">Filtrar por provincia:</td>
+                <td class="auto-style1">
+                    <asp:DropDownList ID="ddlProvincias" runat="server">
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+
+                    &nbsp;</td>
+            </tr>
         </table>
 
         <br />

@@ -65,5 +65,19 @@ namespace TP5_PROGRA3.Clases
             // Si la tabla tiene alguna fila, es porque ya existe el nombre
             return tabla.Rows.Count > 0;
         }
+
+        public DataTable FiltrarSucursalesPorProvincia(string idProvincia)
+        {
+            string consultaSQL = $"SELECT Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_Provincia=Id_ProvinciaSucursal WHERE Id_ProvinciaSucursal = {idProvincia}";
+            string nombreTabla = "SucursalesFiltradas";
+            return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
+        }
+
+        public DataTable FiltrarSucursalesPorProvinciaYID(string idProvincia, string idSucursal)
+        {
+            string consultaSQL = $"SELECT Id_Sucursal AS ID, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Id_Provincia=Id_ProvinciaSucursal WHERE Id_ProvinciaSucursal = {idProvincia} AND Id_Sucursal = {idSucursal}";
+            string nombreTabla = "SucursalesFiltradas";
+            return conexion.ObtenerTablaBD(consultaSQL, nombreTabla);
+        }
     }
 }

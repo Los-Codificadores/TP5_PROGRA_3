@@ -140,6 +140,31 @@
             font-size: 15px;
             font-weight: 500;
         }
+        /* ESTILOS PARA LA GRILLA (DARK MODE) */
+        .grid-view {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(18, 18, 18, 0.5);
+            color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .grid-header th {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            font-weight: bold;
+        }
+        .grid-row td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .grid-row:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
     </style></head><body>
     <form id="form1" runat="server">
         <div class="menu-container">
@@ -198,13 +223,15 @@
 
         <br />
 
-        <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False" CssClass="grid-view" GridLines="None">
+            <HeaderStyle CssClass="grid-header" />
+            <RowStyle CssClass="grid-row" />
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID_Sucursal" />
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-                <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
-                <asp:BoundField DataField="Provincia" HeaderText="Provincia" />
-                <asp:BoundField DataField="Direccion" HeaderText="Dirección" />
+                <asp:BoundField DataField="ID" HeaderText="ID_SUCURSAL" />
+                <asp:BoundField DataField="Nombre" HeaderText="NOMBRE" />
+                <asp:BoundField DataField="Descripcion" HeaderText="DESCRIPCION" />
+                <asp:BoundField DataField="Provincia" HeaderText="PROVINCIA" />
+                <asp:BoundField DataField="Direccion" HeaderText="DIRECCION" />
             </Columns>
         </asp:GridView>
     </form>

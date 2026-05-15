@@ -200,7 +200,7 @@
 
         <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False">
             <Columns>
-                <asp:BoundField DataField="ID" HeaderText="ID" />
+                <asp:BoundField DataField="ID" HeaderText="ID_Sucursal" />
                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="Descripcion" HeaderText="Descripción" />
                 <asp:BoundField DataField="Provincia" HeaderText="Provincia" />

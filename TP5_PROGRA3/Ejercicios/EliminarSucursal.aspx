@@ -24,6 +24,18 @@
         padding: 8px 16px;
         border-radius: 8px;
     }
+        .auto-style2 {
+            width: 166px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .auto-style1 {
+            width: 103px;
+        }
+        .form-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
     </style>
 </head>
 <body>
@@ -36,6 +48,26 @@
         </div>
         
         </div>
+        <p>
+        
+        <asp:Label ID="lblEliminarSucursal" runat="server" Font-Bold="False" Text="Eliminar Sucursal" Font-Size="X-Large"></asp:Label>
+        </p>
+
+        <table class="form-table">
+            <tr>
+                <td class="auto-style2">Ingresar ID Sucursal</td>
+                <td class="auto-style1">
+                    <asp:TextBox ID="TextBoxEliminarSucursal" runat="server" Width="146px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:Button ID="ButtonEliminarSucursal" runat="server" Text="Eliminar" ValidationGroup="Filtro" />
+                </td>
+                <td>
+
+                    &nbsp;</td>
+            </tr>
+        </table>
+
     </form>
 </body>
 </html>

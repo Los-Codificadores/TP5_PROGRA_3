@@ -73,5 +73,16 @@ namespace TP5_PROGRA3.Ejercicios
             //Inserto la opcion "Seleccione una provincia" al inicio del DropDownList
             ddlProvincias.Items.Insert(0, new ListItem("Seleccione una provincia", "0"));
         }
+
+        protected void ddlProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ButtonFiltrarPorID_Click(sender, e);
+        }
+
+        protected void GridViewSucursales_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridViewSucursales.PageIndex = e.NewPageIndex;
+            ButtonFiltrarPorID_Click(sender, e);
+        }
     }
 }

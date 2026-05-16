@@ -194,7 +194,7 @@
             <tr>
                 <td class="auto-style2">Filtrar por provincia:</td>
                 <td class="auto-style1">
-                    <asp:DropDownList ID="ddlProvincias" runat="server">
+                    <asp:DropDownList ID="ddlProvincias" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincias_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
                 <td>
@@ -217,9 +217,11 @@
 
         <br />
 
-        <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False" CssClass="grid-view" GridLines="None">
+        <asp:GridView ID="GridViewSucursales" runat="server" AutoGenerateColumns="False" CssClass="grid-view" GridLines="None" AllowPaging="True" OnPageIndexChanging="GridViewSucursales_PageIndexChanging" PageSize="5">
             <HeaderStyle CssClass="grid-header" />
             <RowStyle CssClass="grid-row" />
+            <PagerStyle HorizontalAlign="Center" BackColor="#1e1e1e" ForeColor="#d4af37" Font-Bold="True" Height="40px" />
+
             <Columns>
                 <asp:BoundField DataField="ID" HeaderText="ID_SUCURSAL" />
                 <asp:BoundField DataField="Nombre" HeaderText="NOMBRE" />
